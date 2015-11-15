@@ -10,7 +10,13 @@
     <!-- main js functions -->
     <script type="text/javascript">
       google.load("visualization", "1", {packages:["corechart"]});
-      google.setOnLoadCallback(findStudent);
+      google.setOnLoadCallback(loadedQuery);
+      
+      function loadedQuery() {
+        document.getElementById("cornellid").disabled = false;
+        document.getElementById("search").disabled = false;
+        
+      }
 
       function findStudent() {
         var cornellid = document.getElementById("cornellid").value;
@@ -75,7 +81,7 @@
 <br />
 <br />
           <h3 style="color: red" class="text-center">
-          Cornell ID: <input type="text" style="color: #444; width:50%" id="cornellid" value=""><button type="button" onclick="findStudent()" class="btn btn-danger">Search</button></h3>
+          Cornell ID: <input type="text" style="color: #444; width:50%" id="cornellid" value="" disabled><button id= "search" type="button" onclick="findStudent()" class="btn btn-danger" disabled>Search</button></h3>
           <hr>
           <h1 class="text-center"> Search Results </h1>
           <table class="table table-striped">
