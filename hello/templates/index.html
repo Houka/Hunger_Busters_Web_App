@@ -9,6 +9,8 @@
 
     <!-- main js functions -->
     <script type="text/javascript">
+      google.load("visualization", "1", {packages:["Query"]});
+      google.setOnLoadCallback(findStudent);
 
       function findStudent() {
         var cornellid = document.getElementById("cornellid").value;
